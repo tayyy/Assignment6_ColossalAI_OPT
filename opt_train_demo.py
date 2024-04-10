@@ -50,7 +50,7 @@ def train_epoch(epoch, model, optimizer, _criterion, lr_scheduler, dataloader, b
                     pbar.set_postfix({"loss": loss.item()})
             else:
                 data = next(dataloader)
-                data = move_to_cuda(data)
+                data = move_to_cuda(data,device=torch.device("cuda"))
                 outputs = model(**data)
                 loss = _criterion(outputs, None)
                 # Backward
