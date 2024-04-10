@@ -1,4 +1,4 @@
-![image](https://github.com/tayyy/Assignment6_ColossalAI_OPT/assets/10602507/54030d6e-b13e-44ce-af3c-637e1994db5c)## Model: OPT-350M
+## Model: OPT-350M
 The experiment utilized the OPT-350M model, which is part of the Open Pre-trained Transformer (OPT) suite of open-sourced decoder-only transformer language models developed by Meta AI, with 350 million parameters. Like the other OPT models, OPT-350M follows a standard transformer decoder architecture, with 24 layers, 16 attention heads, and a hidden dimension size of 1024. The model uses ReLU activations and was trained using an AdamW optimizer with a linear warmup and decay learning rate schedule, on a large corpus of English text data.
 
 ## Dataset Employed: WikiText-2
