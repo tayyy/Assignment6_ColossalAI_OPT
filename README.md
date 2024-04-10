@@ -1,31 +1,9 @@
-<!---
-Copyright 2020 The HuggingFace Team. All rights reserved.
+## Model: OPT-350M
+The experiment utilized the OPT-350M model, which is part of the Open Pre-trained Transformer (OPT) suite of open-sourced decoder-only transformer language models developed by Meta AI, with 350 million parameters. Like the other OPT models, OPT-350M follows a standard transformer decoder architecture, with 24 layers, 16 attention heads, and a hidden dimension size of 1024. The model uses ReLU activations and was trained using an AdamW optimizer with a linear warmup and decay learning rate schedule, on a large corpus of English text data.
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+## Dataset Employed:
 
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
-
-## OPT
-Meta recently released [Open Pretrained Transformer (OPT)](https://github.com/facebookresearch/metaseq), a 175-Billion parameter AI language model, which stimulates AI programmers to perform various downstream tasks and application deployments.
-
-The following example of [Colossal-AI](https://github.com/hpcaitech/ColossalAI) demonstrates fine-tuning Casual Language Modelling at low cost.
-
-
-## Our Modifications
-
-We are using the pre-training weights of the OPT model provided by Hugging Face Hub on the raw WikiText-2 (no tokens were replaced before
-the tokenization).
-
-We adapt the OPT training code to ColossalAI by leveraging [Boosting API](https://colossalai.org/docs/basics/booster_api) loaded with a chosen plugin, where each plugin corresponds to a specific kind of training strategy. This example supports plugins including TorchDDPPlugin, LowLevelZeroPlugin, HybridParallelPlugin and GeminiPlugin.
+The dataset utilized is the raw WikiText-2 dataset, an unaltered version of the WikiText language modeling dataset. Unlike preprocessed variants, this dataset maintains original tokens from Wikipedia articles, including case, punctuation, and numbers, without substituting out-of-vocabulary words with a special <unk> token. This raw format is particularly beneficial for character-level language modeling tasks, preserving comprehensive character-level information from the source text. Compared to the preprocessed Penn Treebank dataset, raw WikiText-2 is more than twice as large and boasts a significantly expanded vocabulary, rendering it ideal for models capable of exploiting long-term dependencies in text.
 
 ## Run Demo
 
