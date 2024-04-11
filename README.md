@@ -15,4 +15,24 @@ The training process of deep learning networks is iterative, and Gemini capitali
 1. Open ColossalAI_OPT.ipynb in Google Colab and execute it using GPU hardware acceleration.
 2. This script automates the process by cloning the repository from GitHub, installing all essential dependencies and packages necessary for model training, and conducting performance benchmarking with various ColossalAI plugins.
 
-## ExperimentResult 
+## Experiment and Result 
+In the experiment, OPT-350M was trained in colossal AI with Gemini plugin showing the OPT model converged slowly and the loss is decreasing in every epoch as shown as the plot below:
+
+![image](https://github.com/tayyy/Assignment6_ColossalAI_OPT/assets/10602507/103fddaf-276e-40dd-babb-271045b1f8bb)
+
+Benchmark of different plugin has been also conducted by training OPT-125M. 
+The benchmark results show that using the torch_ddp plugin yielded a throughput of 2.59 batch/sec and a maximum memory usage per GPU of 8.38 GB. When switching to the torch_ddp_fp16 plugin, the throughput significantly increased to 5.71 batch/sec, while the maximum memory usage per GPU decreased to 7.11 GB. Adopting the low_level_zero plugin further improved the throughput to 6.57 batch/sec, with a reduction in maximum memory usage per GPU to 4.90 GB. Lastly, utilizing the gemini plugin resulted in a throughput of 6.29 batch/sec, with the lowest maximum memory usage per GPU among all plugins, at 3.51 GB.
+
+![image](https://github.com/tayyy/Assignment6_ColossalAI_OPT/assets/10602507/50a688a9-0daa-43dd-b7d6-1ed394ca2ee2)
+
+![image](https://github.com/tayyy/Assignment6_ColossalAI_OPT/assets/10602507/17eabcd8-1ec6-4305-81f6-6f647030a709)
+
+## Reference
+
+Research Paper: https://arxiv.org/pdf/2110.14883.pdf
+
+Colossal Ai Website: https://colossalai.org/
+
+Github Repo: https://github.com/hpcaitech/ColossalAI#colossalchat
+
+
